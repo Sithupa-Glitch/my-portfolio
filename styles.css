@@ -1,0 +1,868 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #0a0a0a;
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 1rem;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  text-align: center;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar ul li {
+  margin: 0 20px;
+}
+
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #ff00f7;
+}
+
+/* General Section Styling */
+.section {
+  padding: 100px 20px;
+  min-height: 100vh;
+}
+
+/* Home Section */
+.home {
+  background: linear-gradient(45deg, #00f0ff, #ff00f7);
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  animation: homeAnimation 2s ease-out;
+}
+
+h1, h2, h3 {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 4rem;
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+/* About Section */
+.about, .projects, .skills, .testimonials, .contact {
+  background: #111;
+  padding: 80px 20px;
+}
+
+/* Skills Section */
+.skills .skill-cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.skill-cards .card {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+  width: 30%;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-cards .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 0, 255, 1);
+}
+
+/* Project Section */
+.project-cards, .testimonial-cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.project-cards .card, .testimonial-cards .card {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+  width: 30%;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-cards .card:hover, .testimonial-cards .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 0, 255, 1);
+}
+
+/* Glowing Text Effect */
+.glow-text {
+  color: #ff00f7;
+  text-shadow: 0 0 10px #ff00f7, 0 0 20px #ff00f7, 0 0 30px #ff00f7;
+}
+
+/* Form Inputs and Buttons */
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #444;
+  background-color: #222;
+  color: #fff;
+}
+
+button {
+  padding: 12px 25px;
+  background-color: #ff00f7;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #ff5cff;
+}
+
+/* Parallax Effect */
+.home {
+  background-attachment: fixed;
+}
+
+/* 3D Card Hover Effect */
+.card {
+  perspective: 1000px;
+}
+
+.card:hover {
+  transform: rotateY(10deg) rotateX(10deg);
+}
+
+/* Keyframes for Animations */
+@keyframes homeAnimation {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/* General Home Section Styling */
+.home {
+  position: relative;
+  background: linear-gradient(45deg, #00f0ff, #ff00f7);
+  background-size: 400% 400%;
+  animation: gradientAnimation 8s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Animated Background */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Content Styling */
+.content {
+  z-index: 2;
+}
+
+.glow-text {
+  color: #ff00f7;
+  text-shadow: 0 0 10px #ff00f7, 0 0 20px #ff00f7, 0 0 30px #ff00f7;
+  animation: glowText 1.5s ease-in-out infinite alternate;
+}
+
+/* Text Animations */
+.animated-text {
+  opacity: 0;
+  animation: fadeInUp 2s ease forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowText {
+  0% {
+    text-shadow: 0 0 10px #ff00f7, 0 0 20px #ff00f7, 0 0 30px #ff00f7;
+  }
+  50% {
+    text-shadow: 0 0 20px #ff00f7, 0 0 40px #ff00f7, 0 0 60px #ff00f7;
+  }
+  100% {
+    text-shadow: 0 0 30px #ff00f7, 0 0 60px #ff00f7, 0 0 90px #ff00f7;
+  }
+}
+
+/* Call-to-Action Button */
+.cta-button {
+  padding: 15px 40px;
+  margin-top: 20px;
+  background-color: transparent;
+  border: 2px solid #ff00f7;
+  color: #ff00f7;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #ff00f7;
+  color: #111;
+  box-shadow: 0 0 15px #ff00f7;
+}
+
+/* Particles Background Effect */
+.particles-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('path-to-your-particle-image.png') repeat;
+  background-size: 50px 50px;
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Custom Cursor */
+body {
+  cursor: url('path-to-your-custom-cursor.png'), auto;
+}
+
+body {
+  cursor: none;
+}
+
+body::after {
+  content: '';
+  position: absolute
+}
+.particles-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('path-to-your-particle-image.png') repeat;
+  background-size: 50px 50px;
+  animation: moveParticles 20s linear infinite;
+}
+
+@keyframes moveParticles {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100px 100px;
+  }
+}
+.cta-button:hover {
+  background-color: #ff00f7;
+  color: #111;
+  box-shadow: 0 0 15px #ff00f7, 0 0 30px #ff00f7;
+  border-color: #ff5cff;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 15px #ff00f7, 0 0 30px #ff00f7;
+  }
+  50% {
+    box-shadow: 0 0 20px #ff5cff, 0 0 40px #ff5cff;
+  }
+  100% {
+    box-shadow: 0 0 15px #ff00f7, 0 0 30px #ff00f7;
+  }
+}
+.skill-cards .card, .project-cards .card {
+  transform-style: preserve-3d;
+}
+
+.skill-cards .card:hover {
+  transform: rotateX(10deg) rotateY(10deg) translateZ(10px);
+  box-shadow: 0 10px 30px rgba(255, 0, 255, 0.7);
+}
+.navbar ul li a.active {
+  color: #ff00f7;
+  font-weight: bold;
+}
+.navbar ul li a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #ff00f7;
+  transform: translateY(-3px);
+}
+
+.navbar ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background-color: #ff00f7;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar ul li a:hover::after {
+  width: 100%;
+}
+/* About Section */
+.about-container {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 4px solid #ff00f7;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+  animation: glowImage 3s infinite alternate;
+}
+
+.about-details {
+  max-width: 600px;
+  text-align: left;
+}
+
+.about-details ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.about-details li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.about-details li:before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #ff00f7;
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Image Animation */
+@keyframes glowImage {
+  0% {
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(255, 0, 255, 1);
+  }
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+@keyframes glowEffect {
+  0% {
+    text-shadow: 0 0 10px #ff00f7, 0 0 20px #ff00f7, 0 0 40px #ff00f7;
+  }
+  50% {
+    text-shadow: 0 0 20px #ff00f7, 0 0 40px #ff00f7, 0 0 80px #ff00f7;
+  }
+  100% {
+    text-shadow: 0 0 30px #ff00f7, 0 0 60px #ff00f7, 0 0 90px #ff00f7;
+  }
+}
+
+h2.glow-text {
+  animation: glowEffect 2s infinite alternate;
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.about-details {
+  animation: slideInLeft 1.5s ease forwards;
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.about-image {
+  animation: slideInRight 1.5s ease forwards;
+}
+
+.cta-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+  transition: left 0.4s ease;
+}
+
+.cta-button:hover::before {
+  left: 100%;
+}
+
+.skills-intro {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #ccc;
+}
+
+.skill-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.skill-card {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: cardFadeIn 0.5s ease-in;
+}
+
+.skill-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(255, 0, 255, 1);
+}
+
+@keyframes cardFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #333;
+  border-radius: 50px;
+  margin-top: 15px;
+  overflow: hidden;
+  height: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #ff00f7;
+  animation: fillBar 1s ease-in-out;
+}
+
+@keyframes fillBar {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.project-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.project-card {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: cardSlideIn 0.8s ease-in-out;
+}
+
+.project-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 1);
+}
+
+.view-details {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid #00ffff;
+  color: #00ffff;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-details:hover {
+  background-color: #00ffff;
+  color: #111;
+  box-shadow: 0 0 15px #00ffff;
+}
+
+.projects-intro {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #ccc;
+}
+
+.project-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.project-card {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: cardSlideIn 0.8s ease-in-out;
+}
+
+.project-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 1);
+}
+
+.view-details {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid #00ffff;
+  color: #00ffff;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-details:hover {
+  background-color: #00ffff;
+  color: #111;
+  box-shadow: 0 0 15px #00ffff;
+}
+
+@keyframes cardSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.testimonial-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.testimonial-card {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: testimonialSlideIn 0.8s ease-in-out;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(255, 0, 255, 1);
+}
+
+.testimonial-card h4 {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  color: #ff00f7;
+}
+
+.testimonial-card .designation {
+  margin-top: 5px;
+  font-size: 0.9rem;
+  color: #00f0ff;
+}
+
+.testimonials-intro {
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+/* Animations */
+@keyframes testimonialSlideIn {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Chatbot Icon Styling */
+.chat-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff00f7;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 30px;
+  color: white;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+  z-index: 100;
+  transition: transform 0.3s ease;
+}
+
+.chat-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Chatbot Container Styling */
+.chat-container {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 350px;
+  height: 400px;
+  background-color: #222;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(255, 0, 255, 0.5);
+  z-index: 100;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  animation: bounceIn 0.5s ease-out;
+}
+
+.chat-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-icon {
+  font-size: 25px;
+  color: #ff00f7;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-icon:hover {
+  color: #ff5cff;
+}
+
+/* Chat Box and Input Styling */
+#chat-box {
+  width: 100%;
+  height: 70%;
+  overflow-y: auto;
+  background-color: #111;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 1rem;
+  box-shadow: inset 0 0 10px rgba(255, 0, 255, 0.5);
+}
+
+#user-input {
+  width: 80%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background-color: #333;
+  color: #fff;
+}
+
+#send-button {
+  padding: 12px 25px;
+  background-color: #ff00f7;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 80%;
+}
+
+#send-button:hover {
+  background-color: #ff5cff;
+}
+
+/* Animations for chat messages */
+@keyframes fadeInMessage {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chat-box p {
+  animation: fadeInMessage 0.5s ease-in-out;
+  margin-bottom: 10px;
+}
+
+/* Add bouncing effect for the chatbot container */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/* Chat Icon (Round) Styling */
+.chat-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff00f7; /* Background color */
+  border-radius: 50%; /* Ensures the background is round */
+  width: 60px; /* Icon width */
+  height: 60px; /* Icon height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+  z-index: 100;
+  font-size: 30px; /* Icon size */
+  color: white; /* Icon color */
+}
